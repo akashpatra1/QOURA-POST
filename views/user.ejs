@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        background-color: bisque;
+    }
+</style>
+<body>
+    <a href="/user">Add new User</a>
+<table border="black">
+    <tr>
+        <th>Id</th>
+        <th>Username</th>
+        <th>Email</th>
+    </tr>
+    <% for(datas of data){%>
+        <tr>
+            <td><%=datas.id%></td>
+            <td><%=datas.username%></td>
+            <td><%=datas.email%></td>
+            <td>
+                <form method="GET" action="http://localhost:3000/user/<%=datas.id%>/edit">
+                    <button>Edit</button>
+                </form>
+            </td>
+            <td>
+                <form method="GET" action="http://localhost:3000/user/<%=datas.id%>/edit">
+                    <button>Delete</button>
+                </form>
+            </td>
+            
+        </tr>
+
+   <% } %>
+</table>
+</body>
+</html>
